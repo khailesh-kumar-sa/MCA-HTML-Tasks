@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf2f8;
+            padding: 40px;
+        }
+
+        .form-container {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .form-group {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+
+        .options {
+            margin-top: 10px;
+        }
+
+        .options label {
+            font-weight: normal;
+            margin-right: 15px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>Registration Form</h1>
+
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="gender" value="male">
+                        Male
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="female">
+                        Female
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="other">
+                        Other
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Hobbies:</label>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="hobby" value="coding">
+                        Coding
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="hobby" value="music">
+                        Music
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="hobby" value="sports">
+                        Sports
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="hobby" value="reading">
+                        Reading
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
