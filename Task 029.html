@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Underwater Exploration</title>
+
+    <style>
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+
+            /* Full background image */
+            background-image: url("https://images.unsplash.com/photo-1544551763-46a013bb70d5");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Dark layer over the image */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.45;
+            z-index: -1;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .glass {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 15px;
+
+            padding: 25px;
+            margin-bottom: 25px;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 42px;
+        }
+
+        h2 {
+            color: yellow;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        /* TEXT-TRANSFORM */
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .lowercase {
+            text-transform: lowercase;
+        }
+
+        .capitalize {
+            text-transform: capitalize;
+        }
+
+        /* TEXT-DECORATION */
+        .underline {
+            text-decoration: underline;
+        }
+
+        .overline {
+            text-decoration: overline;
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        /* LETTER-SPACING */
+        .wide {
+            letter-spacing: 8px;
+        }
+
+        .normal-spacing {
+            letter-spacing: normal;
+        }
+
+        .tight {
+            letter-spacing: -1px;
+        }
+
+        .example {
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid white;
+        }
+
+        code {
+            color: yellow;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="glass">
+
+            <h1>Underwater Exploration</h1>
+
+            <p>
+                The ocean is one of the least explored environments on
+                Earth. This webpage demonstrates three CSS text properties
+                using an underwater exploration theme.
+            </p>
+
+        </header>
+
+
+        <!-- TEXT TRANSFORM -->
+
+        <section class="glass">
+
+            <h2>1. text-transform</h2>
+
+            <p>
+                The text-transform property changes the capitalization
+                of text without changing the original HTML content.
+            </p>
+
+            <div class="example">
+
+                <p class="uppercase">
+                    Discover the hidden world beneath the ocean.
+                </p>
+
+                <code>text-transform: uppercase;</code>
+
+            </div>
+
+            <div class="example">
+
+                <p class="lowercase">
+                    DISCOVER THE HIDDEN WORLD BENEATH THE OCEAN.
+                </p>
+
+                <code>text-transform: lowercase;</code>
+
+            </div>
+
+            <div class="example">
+
+                <p class="capitalize">
+                    explore coral reefs and discover marine life.
+                </p>
+
+                <code>text-transform: capitalize;</code>
+
+            </div>
+
+        </section>
+
+
+        <!-- TEXT DECORATION -->
+
+        <section class="glass">
+
+            <h2>2. text-decoration</h2>
+
+            <p>
+                The text-decoration property adds visual decorations
+                such as underlines, overlines, and lines through text.
+            </p>
+
+            <div class="example">
+
+                <p class="underline">
+                    Underwater Research
+                </p>
+
+                <code>text-decoration: underline;</code>
+
+            </div>
+
+            <div class="example">
+
+                <p class="overline">
+                    Deep Sea Exploration
+                </p>
+
+                <code>text-decoration: overline;</code>
+
+            </div>
+
+            <div class="example">
+
+                <p class="strike">
+                    Unknown Ocean Territory
+                </p>
+
+                <code>text-decoration: line-through;</code>
+
+            </div>
+
+        </section>
+
+
+        <!-- LETTER SPACING -->
+
+        <section class="glass">
+
+            <h2>3. letter-spacing</h2>
+
+            <p>
+                The letter-spacing property controls the amount of
+                horizontal space between individual characters.
+            </p>
+
+            <div class="example">
+
+                <p class="wide">
+                    OCEAN
+                </p>
+
+                <code>letter-spacing: 8px;</code>
+
+            </div>
+
+            <div class="example">
+
+                <p class="normal-spacing">
+                    Deep Sea
+                </p>
+
+                <code>letter-spacing: normal;</code>
+
+            </div>
+
+            <div class="example">
+
+                <p class="tight">
+                    Marine Biology
+                </p>
+
+                <code>letter-spacing: -1px;</code>
+
+            </div>
+
+        </section>
+
+
+        <footer class="glass">
+
+            <h2>Exploring the Unknown</h2>
+
+            <p>
+                CSS text properties give developers control over how
+                written content looks and feels on a webpage.
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>

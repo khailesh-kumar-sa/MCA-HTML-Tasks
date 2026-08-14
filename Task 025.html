@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TVK - Background Properties</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            color: white;
+
+            /* Red and yellow gradient */
+            background: linear-gradient(to right, red, yellow);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+
+            padding: 25px;
+            margin-bottom: 25px;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 40px;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        p {
+            color: white;
+            line-height: 1.7;
+        }
+
+        /* Demonstrating all five background properties */
+        .image-section {
+
+            height: 450px;
+
+            /* 1. background-color */
+            background-color: red;
+
+            /* 2. background-image */
+            background-image: url("https://im.rediff.com/news/2026/may/04vijay-joseph.jpg");
+
+            /* 3. background-position */
+            background-position: center;
+
+            /* 4. background-repeat */
+            background-repeat: no-repeat;
+
+            /* 5. background-size */
+            background-size: cover;
+
+            border-radius: 15px;
+            border: 2px solid white;
+
+            margin-top: 20px;
+        }
+
+        .property {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid white;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="glass">
+
+            <h1>Tamilaga Vettri Kazhagam</h1>
+
+            <p>
+                This webpage demonstrates important CSS background
+                properties using a TVK-related image and a glassmorphism
+                interface.
+            </p>
+
+        </header>
+
+
+        <section class="glass">
+
+            <h2>Background Image Demonstration</h2>
+
+            <p>
+                The section below demonstrates how CSS can control the
+                color, image, position, repetition, and size of a
+                background.
+            </p>
+
+            <div class="image-section"></div>
+
+        </section>
+
+
+        <section class="glass">
+
+            <h2>Background Properties</h2>
+
+
+            <div class="property">
+
+                <h2>1. background-color</h2>
+
+                <p>
+                    The background-color property sets a background color
+                    for an element. Here, red is used as the background
+                    color of the image section.
+                </p>
+
+            </div>
+
+
+            <div class="property">
+
+                <h2>2. background-image</h2>
+
+                <p>
+                    The background-image property places an image behind
+                    the content of an element. The provided TVK-related
+                    photograph is used here.
+                </p>
+
+            </div>
+
+
+            <div class="property">
+
+                <h2>3. background-position</h2>
+
+                <p>
+                    The background-position property controls where the
+                    background image appears. The value center places
+                    the image in the center of the section.
+                </p>
+
+            </div>
+
+
+            <div class="property">
+
+                <h2>4. background-repeat</h2>
+
+                <p>
+                    The background-repeat property controls whether an
+                    image is repeated. The value no-repeat displays the
+                    image only once.
+                </p>
+
+            </div>
+
+
+            <div class="property">
+
+                <h2>5. background-size</h2>
+
+                <p>
+                    The background-size property controls the size of
+                    the background image. The value cover makes the
+                    image cover the entire section.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="glass">
+
+            <h2>About TVK</h2>
+
+            <p>
+                Tamilaga Vettri Kazhagam, commonly known as TVK, is a
+                political organization in Tamil Nadu. This webpage uses
+                TVK-related content as an example while demonstrating
+                CSS background properties.
+            </p>
+
+            <p>
+                The red and yellow gradient provides the main visual
+                background, while the glassmorphism cards allow the
+                background to remain visible behind the content.
+            </p>
+
+        </section>
+
+
+        <footer class="glass">
+
+            <p>
+                CSS Background Properties Demonstration
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silhouette Gallery</title>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+
+            background-image: url("file:///C:/Users/DELL/Downloads/silhoutte.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .content {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: black;
+            opacity: 0.75;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 45px;
+            color: yellow;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        p {
+            max-width: 700px;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <h1>Silhouette</h1>
+
+        <h2>A Full-Screen Background</h2>
+
+        <p>
+            This webpage uses a full-screen image as its background.
+            The background-size: cover property makes the image expand
+            to cover the entire screen while maintaining its original
+            aspect ratio.
+        </p>
+
+        <p>
+            The image may be slightly cropped when the screen has a
+            different aspect ratio, but there will be no empty space
+            around the background image.
+        </p>
+
+    </div>
+
+</body>
+</html>

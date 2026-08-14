@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Properties Demonstration</title>
+
+    <style>
+        body {
+            background-color: beige;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border: 2px solid black;
+        }
+
+        h1 {
+            color: brown;
+            text-align: center;
+        }
+
+        h2 {
+            color: darkred;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        /* font-size */
+        .large-text {
+            font-size: 28px;
+        }
+
+        /* font-weight */
+        .bold-text {
+            font-weight: bold;
+        }
+
+        /* font-style */
+        .italic-text {
+            font-style: italic;
+        }
+
+        .example {
+            background-color: lightyellow;
+            border: 1px solid brown;
+            padding: 20px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Ancient Egypt</h1>
+
+        <p>
+            CSS provides several properties for controlling how text
+            appears on a webpage. Three important properties are
+            font-size, font-weight, and font-style.
+        </p>
+
+        <div class="example">
+
+            <h2>1. font-size</h2>
+
+            <p class="large-text">
+                The pyramids of Egypt are among the most famous structures
+                from the ancient world.
+            </p>
+
+            <p>
+                The <strong>font-size</strong> property controls the size
+                of text. In the paragraph above, the text has been made
+                larger using <strong>font-size: 28px;</strong>.
+            </p>
+
+        </div>
+
+        <div class="example">
+
+            <h2>2. font-weight</h2>
+
+            <p class="bold-text">
+                Ancient Egyptian civilization developed along the Nile River.
+            </p>
+
+            <p>
+                The <strong>font-weight</strong> property controls how
+                thick or bold the characters appear. The paragraph above
+                uses <strong>font-weight: bold;</strong>.
+            </p>
+
+        </div>
+
+        <div class="example">
+
+            <h2>3. font-style</h2>
+
+            <p class="italic-text">
+                Egyptian hieroglyphs were used as a writing system in
+                ancient Egypt.
+            </p>
+
+            <p>
+                The <strong>font-style</strong> property controls whether
+                text appears normal, italic, or oblique. The paragraph
+                above uses <strong>font-style: italic;</strong>.
+            </p>
+
+        </div>
+
+        <h2>Using All Three Together</h2>
+
+        <p
+            style="font-size: 24px; font-weight: bold; font-style: italic;">
+            The ancient world continues to inspire modern generations.
+        </p>
+
+    </div>
+
+</body>
+</html>
