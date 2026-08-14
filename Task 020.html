@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+
+    <style>
+        /* Universal Selector */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            padding: 30px;
+            border: 2px solid white;
+        }
+
+        /* Element Selector */
+        h1 {
+            color: yellow;
+            text-align: center;
+        }
+
+        /* Class Selector */
+        .class-example {
+            color: green;
+        }
+
+        /* ID Selector */
+        #id-example {
+            color: red;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        p {
+            color: white;
+            line-height: 1.6;
+        }
+
+        .box {
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>CSS Selector Demonstration</h1>
+
+        <p>
+            CSS selectors allow us to target specific HTML elements and
+            apply different styles to them. This page demonstrates four
+            commonly used types of selectors.
+        </p>
+
+        <div class="box">
+
+            <h2>1. Element Selector</h2>
+
+            <p>
+                The element selector targets all elements of a particular
+                HTML type. In this example, the h1 selector changes the
+                color of every h1 element to yellow.
+            </p>
+
+        </div>
+
+        <div class="box">
+
+            <h2>2. Class Selector</h2>
+
+            <p class="class-example">
+                The class selector uses a class name and can be applied
+                to multiple HTML elements. This paragraph uses the
+                class-example class and appears in green.
+            </p>
+
+            <p>
+                Another paragraph can remain unaffected because it does
+                not have the class-example class.
+            </p>
+
+        </div>
+
+        <div class="box">
+
+            <h2>3. ID Selector</h2>
+
+            <p id="id-example">
+                The ID selector targets one specific element using a
+                unique ID. This paragraph has the ID id-example and
+                appears in red.
+            </p>
+
+        </div>
+
+        <div class="box">
+
+            <h2>4. Universal Selector</h2>
+
+            <p>
+                The universal selector is represented by an asterisk (*).
+                It targets every element on the webpage. Here it is used
+                to apply box-sizing to all elements.
+            </p>
+
+        </div>
+
+        <h2>Selector Summary</h2>
+
+        <p>
+            Element Selector → h1
+        </p>
+
+        <p class="class-example">
+            Class Selector → .class-example
+        </p>
+
+        <p id="id-example">
+            ID Selector → #id-example
+        </p>
+
+        <p>
+            Universal Selector → *
+        </p>
+
+    </div>
+
+</body>
+</html>
