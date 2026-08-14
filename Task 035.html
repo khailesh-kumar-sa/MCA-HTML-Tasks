@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Details</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+            color: black;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border: 2px solid black;
+        }
+
+        h1 {
+            text-align: center;
+            color: blue;
+        }
+
+        h2 {
+            color: green;
+            border-bottom: 1px solid gray;
+            padding-bottom: 8px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 95%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .photo {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .photo img {
+            width: 250px;
+            height: auto;
+            border: 2px solid black;
+        }
+
+        .photo p {
+            font-weight: bold;
+            font-size: 20px;
+            color: blue;
+        }
+
+        .submit-button {
+            text-align: center;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>My Personal Details</h1>
+
+        <div class="photo">
+
+            <img src="file:///D:/Memories/IV/Photos/IMG_20250827_161649.jpg"
+                 alt="Photo of Khailesh Kumar">
+
+            <p>Khailesh Kumar S A</p>
+
+        </div>
+
+        <form>
+
+            <h2>Personal Information</h2>
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"
+                   value="Khailesh Kumar">
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"
+                   placeholder="Enter your email">
+
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone"
+                   placeholder="Enter your phone number">
+
+
+            <h2>Education</h2>
+
+            <label for="degree">Completed Degree:</label><br>
+            <input type="text" id="degree" name="degree"
+                   value="BCA">
+
+            <label for="current">Currently Studying:</label><br>
+            <input type="text" id="current" name="current"
+                   value="MCA">
+
+
+            <h2>About Me</h2>
+
+            <label for="qualities">My Qualities:</label><br>
+            <textarea id="qualities" name="qualities"
+                placeholder="Enter your qualities">Curious, determined, creative, adaptable and interested in continuous learning.</textarea>
+
+
+            <label for="about">About Me:</label><br>
+            <textarea id="about" name="about"
+                placeholder="Write something about yourself"></textarea>
+
+
+            <h2>Skills and Interests</h2>
+
+            <label for="skills">Skills:</label><br>
+            <input type="text" id="skills" name="skills"
+                   placeholder="Programming, Web Development, Cybersecurity...">
+
+            <label for="interests">Interests:</label><br>
+            <input type="text" id="interests" name="interests"
+                   placeholder="Enter your interests">
+
+
+            <div class="submit-button">
+
+                <button type="submit">
+                    Submit All Details
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
