@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+            color: black;
+            font-family: "Courier New", monospace;
+        }
+
+        #homePage {
+            width: 90%;
+            max-width: 450px;
+            min-height: 700px;
+            margin: auto;
+            border: 2px solid black;
+            padding: 55px 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin-bottom: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #homePage h1 {
+            font-size: 22px;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            font-size: 17px;
+            line-height: 1.7;
+            text-align: left;
+            margin-bottom: 45px;
+        }
+
+        .profile-button,
+        .back-button {
+            border: 2px solid black;
+            padding: 15px 25px;
+            background-color: white;
+            color: black;
+            font-family: "Courier New", monospace;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .profile-button:hover,
+        .back-button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        #profilePage {
+            display: none;
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            border: 2px solid black;
+            padding: 45px;
+        }
+
+        #profilePage h1 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: normal;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        .profile-section {
+            border-top: 2px solid black;
+            padding: 25px 0;
+        }
+
+        .profile-section h2 {
+            font-size: 22px;
+            margin-top: 0;
+        }
+
+        .profile-section h3 {
+            font-size: 18px;
+            margin-top: 25px;
+        }
+
+        .profile-section p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .tagline {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-button {
+            margin-top: 25px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            #homePage,
+            #profilePage {
+                width: 100%;
+            }
+
+            #homePage {
+                padding: 35px 25px;
+            }
+
+            #profilePage {
+                padding: 25px;
+            }
+
+            .photo-box {
+                width: 170px;
+                height: 170px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="homePage">
+
+        <div class="photo-box">
+            <img src="D:\Memories\WhatsApp Image 2026-08-17 at 15.00.24.jpeg"
+                 alt="Khailesh Kumar">
+        </div>
+
+        <h1>Student Profile</h1>
+
+        <p class="intro">
+            I am a computer applications student passionate about
+            technology, cybersecurity, software development, and innovation.
+        </p>
+
+        <button class="profile-button" onclick="showProfile()">
+            View Profile
+        </button>
+
+    </div>
+
+    <div id="profilePage">
+
+        <h1>Khailesh Kumar</h1>
+
+        <section class="profile-section">
+
+            <h2>Education</h2>
+
+            <p>
+                I completed my Bachelor of Computer Applications (BCA)
+                from KG College of Arts and Science (KG CAS).
+            </p>
+
+            <p>
+                I have now started my Master of Computer Applications (MCA)
+                at KGiSL Institute of Information Management (KGiSL IIM).
+            </p>
+
+        </section>
+
+        <section class="profile-section">
+
+            <h2>Achievements</h2>
+
+            <p>
+                I have worked on various academic and technology-oriented
+                activities involving software development and cybersecurity.
+            </p>
+
+            <p>
+                My project work and presentations have helped me improve
+                my technical knowledge, problem-solving skills,
+                communication abilities, and confidence.
+            </p>
+
+        </section>
+
+        <section class="profile-section">
+
+            <h2>Projects</h2>
+
+            <h3>Skill It</h3>
+
+            <p>
+                Skill It is a software project focused on learning and
+                skill development through a structured digital platform.
+            </p>
+
+            <h3>DeepShield Mirror</h3>
+
+            <p>
+                DeepShield Mirror is a cybersecurity project based on
+                active cyber deception. It detects suspicious activity
+                on web-based systems and diverts potential attackers
+                into a controlled mirrored environment.
+            </p>
+
+            <p>
+                The project focuses on suspicious login attempts,
+                repeated requests, URL probing, and possible SQL
+                injection patterns while recording activities for analysis.
+            </p>
+
+        </section>
+
+        <section class="profile-section">
+
+            <h2>White Devils Tech</h2>
+
+            <p>
+                White Devils Tech is a technology-focused initiative
+                built around software development, cybersecurity,
+                learning, collaboration, and project development.
+            </p>
+
+            <p>
+                It aims to provide students with opportunities to explore
+                practical technologies, work on software projects,
+                and collaborate on technology-based ideas.
+            </p>
+
+            <p class="tagline">
+                Code, Collaborate, Conquer.
+            </p>
+
+        </section>
+
+        <button class="back-button" onclick="showHome()">
+            Back to Profile
+        </button>
+
+    </div>
+
+    <script>
+        function showProfile() {
+            document.getElementById("homePage").style.display = "none";
+            document.getElementById("profilePage").style.display = "block";
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            document.getElementById("profilePage").style.display = "none";
+            document.getElementById("homePage").style.display = "flex";
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+</html>

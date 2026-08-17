@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberSec Store</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #020617, #071a24, #001f1a);
+            color: white;
+        }
+
+        header {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 0 25px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            color: #cccccc;
+            margin-top: 8px;
+        }
+
+        .products {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+
+            padding-bottom: 40px;
+        }
+
+        .card {
+            position: relative;
+
+            padding: 15px;
+
+            border-radius: 18px;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            border: 1px solid rgba(255, 255, 255, 0.25);
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.17);
+        }
+
+        .image-box {
+            height: 190px;
+
+            border-radius: 14px;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: visible;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            padding: 15px;
+
+            border-radius: 14px;
+        }
+
+        .badge {
+            position: absolute;
+
+            top: 10px;
+            left: 10px;
+
+            background: #00a878;
+
+            padding: 5px 9px;
+
+            border-radius: 6px;
+
+            font-size: 11px;
+
+            z-index: 3;
+        }
+
+        .info {
+            position: absolute;
+
+            top: 10px;
+            right: 10px;
+
+            width: 28px;
+            height: 28px;
+
+            border-radius: 50%;
+
+            background: black;
+
+            border: 1px solid white;
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            cursor: help;
+
+            z-index: 5;
+        }
+
+        .info-text {
+            position: absolute;
+
+            top: 43px;
+            right: 5px;
+
+            width: 210px;
+
+            padding: 8px 10px;
+
+            background: black;
+
+            color: white;
+
+            border: 1px solid #777;
+
+            border-radius: 7px;
+
+            font-size: 12px;
+
+            line-height: 1.4;
+
+            text-align: left;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition: 0.2s;
+
+            z-index: 20;
+        }
+
+        .info:hover + .info-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .card h2 {
+            font-size: 17px;
+            margin: 17px 3px 8px;
+        }
+
+        .description {
+            color: #cccccc;
+            font-size: 13px;
+            line-height: 1.4;
+
+            min-height: 38px;
+        }
+
+        .price {
+            font-size: 21px;
+            font-weight: bold;
+
+            margin: 15px 3px;
+        }
+
+        .approx {
+            font-size: 11px;
+            color: #aaaaaa;
+            font-weight: normal;
+        }
+
+        .cart-button {
+            width: 100%;
+
+            border: none;
+
+            border-radius: 8px;
+
+            padding: 11px;
+
+            background: #00a878;
+
+            color: white;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .cart-button:hover {
+            background: #008f66;
+        }
+
+        #popup {
+            position: fixed;
+
+            left: 50%;
+            bottom: 30px;
+
+            transform: translate(-50%, 80px);
+
+            background: #00a878;
+
+            color: white;
+
+            padding: 13px 22px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            opacity: 0;
+
+            transition: 0.3s;
+
+            z-index: 100;
+        }
+
+        #popup.show {
+            transform: translate(-50%, 0);
+            opacity: 1;
+        }
+
+        .footer {
+            text-align: center;
+
+            color: #999999;
+
+            font-size: 12px;
+
+            padding: 10px 20px 30px;
+        }
+
+        @media (max-width: 1000px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Featured Cybersecurity Products</h1>
+
+        <p>
+            Security hardware and tools for cybersecurity learning,
+            research and authorized testing.
+        </p>
+
+    </header>
+
+
+    <div class="products">
+
+
+        <div class="card">
+
+            <div class="image-box">
+
+                <span class="badge">Popular</span>
+
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Flipper_Zero.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+                    alt="Flipper Zero">
+
+                <span class="info">i</span>
+
+                <div class="info-text">
+                    Portable multi-tool for wireless, RFID, NFC and hardware security research.
+                </div>
+
+            </div>
+
+            <h2>Flipper Zero</h2>
+
+            <p class="description">
+                Portable security research multi-tool.
+            </p>
+
+            <div class="price">
+                ₹18,999
+                <span class="approx">approx.</span>
+            </div>
+
+            <button class="cart-button"
+                    onclick="addToCart('Flipper Zero')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="image-box">
+
+                <span class="badge">Wireless</span>
+
+                <img
+                    src="https://m.media-amazon.com/images/I/51KcOOt1J9L._AC_UF894,1000_QL80_.jpg"
+                    alt="WiFi Pineapple">
+
+                <span class="info">i</span>
+
+                <div class="info-text">
+                    Portable WiFi penetration-testing platform for authorized wireless assessments.
+                </div>
+
+            </div>
+
+            <h2>WiFi Pineapple</h2>
+
+            <p class="description">
+                Wireless security assessment platform.
+            </p>
+
+            <div class="price">
+                ₹9,470
+                <span class="approx">approx.</span>
+            </div>
+
+            <button class="cart-button"
+                    onclick="addToCart('WiFi Pineapple')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="image-box">
+
+                <span class="badge">Hak5</span>
+
+                <img
+                    src="https://sqnbankingsystems.com/wp-content/uploads/2018/08/Rubber-Ducky-hacking-Device.jpg"
+                    alt="USB Rubber Ducky">
+
+                <span class="info">i</span>
+
+                <div class="info-text">
+                    USB HID device used for authorized keystroke-injection security testing.
+                </div>
+
+            </div>
+
+            <h2>USB Rubber Ducky</h2>
+
+            <p class="description">
+                USB security testing and automation device.
+            </p>
+
+            <div class="price">
+                ₹9,560
+                <span class="approx">approx.</span>
+            </div>
+
+            <button class="cart-button"
+                    onclick="addToCart('USB Rubber Ducky')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="image-box">
+
+                <span class="badge">Hardware</span>
+
+                <img
+                    src="https://hackadaycom.files.wordpress.com/2016/09/usb-killer-thumbnail.jpg?w=600&h=600"
+                    alt="USBKill">
+
+                <span class="info">i</span>
+
+                <div class="info-text">
+                    USB hardware designed for authorized electrical and hardware resilience testing.
+                </div>
+
+            </div>
+
+            <h2>USBKill V4</h2>
+
+            <p class="description">
+                Hardware security testing device.
+            </p>
+
+            <div class="price">
+                ₹9,345
+                <span class="approx">approx.</span>
+            </div>
+
+            <button class="cart-button"
+                    onclick="addToCart('USBKill V4')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="image-box">
+
+                <span class="badge">SBC</span>
+
+                <img
+                    src="https://m.media-amazon.com/images/I/81XB4LUuFOL.jpg"
+                    alt="Raspberry Pi 5">
+
+                <span class="info">i</span>
+
+                <div class="info-text">
+                    Compact Linux computer useful for cybersecurity labs, networking and development.
+                </div>
+
+            </div>
+
+            <h2>Raspberry Pi 5</h2>
+
+            <p class="description">
+                Single-board computer for security labs.
+            </p>
+
+            <div class="price">
+                ₹6,690
+                <span class="approx">approx.</span>
+            </div>
+
+            <button class="cart-button"
+                    onclick="addToCart('Raspberry Pi 5')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="image-box">
+
+                <span class="badge">Hak5</span>
+
+                <img
+                    src="https://m.media-amazon.com/images/I/51x-esLw6rL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg"
+                    alt="Bash Bunny">
+
+                <span class="info">i</span>
+
+                <div class="info-text">
+                    USB-based platform for authorized endpoint security testing and automation.
+                </div>
+
+            </div>
+
+            <h2>Bash Bunny</h2>
+
+            <p class="description">
+                USB security testing platform.
+            </p>
+
+            <div class="price">
+                ₹9,470
+                <span class="approx">approx.</span>
+            </div>
+
+            <button class="cart-button"
+                    onclick="addToCart('Bash Bunny')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="image-box">
+
+                <span class="badge">Network</span>
+
+                <img
+                    src="https://shop.hak5.org/cdn/shop/files/ps2_8d77bb63-ae53-4127-8aa8-3543e179004c.png?v=1704474040&width=1200"
+                    alt="Packet Squirrel">
+
+                <span class="info">i</span>
+
+                <div class="info-text">
+                    Compact Linux device for authorized network monitoring and security assessment.
+                </div>
+
+            </div>
+
+            <h2>Packet Squirrel</h2>
+
+            <p class="description">
+                Portable network security assessment device.
+            </p>
+
+            <div class="price">
+                ₹5,640
+                <span class="approx">approx.</span>
+            </div>
+
+            <button class="cart-button"
+                    onclick="addToCart('Packet Squirrel')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="image-box">
+
+                <span class="badge">Network</span>
+
+                <img
+                    src="https://shop.hak5.org/cdn/shop/products/lan-turtle_1024x1024.jpg?v=1592003446"
+                    alt="LAN Turtle">
+
+                <span class="info">i</span>
+
+                <div class="info-text">
+                    USB Ethernet device designed for authorized network auditing and administration.
+                </div>
+
+            </div>
+
+            <h2>LAN Turtle</h2>
+
+            <p class="description">
+                USB network auditing and administration tool.
+            </p>
+
+            <div class="price">
+                ₹5,640
+                <span class="approx">from</span>
+            </div>
+
+            <button class="cart-button"
+                    onclick="addToCart('LAN Turtle')">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <div id="popup">
+        Added to cart
+    </div>
+
+
+    <div class="footer">
+        Prices are approximate INR conversions of manufacturer-listed prices.
+        Actual prices may vary with exchange rates, taxes, shipping and import duties.
+    </div>
+
+
+    <script>
+
+        function addToCart(product) {
+
+            const popup = document.getElementById("popup");
+
+            popup.innerHTML = "✓ " + product + " added to cart";
+
+            popup.classList.add("show");
+
+            setTimeout(function() {
+
+                popup.classList.remove("show");
+
+            }, 2000);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
